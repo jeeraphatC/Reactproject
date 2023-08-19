@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../index.css'
 
 function Home() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
 
   const API_KEY = 'bf998954d92cc264bd1a56bf70845d63';
+
 
   const fetchWeather = async () => {
     try {
@@ -27,14 +29,16 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1>Weather App</h1>
-      <input
-        type="text"
-        placeholder="Enter city name"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
+      <div className='topic'>
+        <h1>Weather App</h1>
+        <input
+          type="text"
+          placeholder="Enter city name"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
       <button onClick={fetchWeather}>Get Weather</button>
+      </div>
       <div className='playground-card'>
         {weatherData.map((weather, index) => (
           <div key={index} className="weather-card">

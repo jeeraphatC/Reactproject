@@ -41,22 +41,3 @@
   padding: 20px;
 }
 
-input {
-  padding: 5px;
-  margin-right: 10px;
-}
-
-button {
-  padding: 5px 10px;
-}
-
-.Home{
-position: relative;
-text-align: center;
-}
-.playground-card{
-  display: flex;
-}
-.weather-card{
-  padding: 20px;
-}
