@@ -1,73 +1,89 @@
-
-.Home{
+.Home {
+  width: 100%;
   margin-top: 4%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  
-  }
-  .playground-card{
- 
-    display: flex;
-  }
-  .weather-card{
-    margin-top: 90%;
-    justify-content: space-between;
-    flex-direction: column;
-  }
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  header {
-    height: 48px;
-    width: 100%;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    background-color: #ffffff;
-    border-bottom: 1px solid #dee2e6;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  
-    padding: 2rem;
-    position: fixed;
-    z-index: 100;
-  }
-  
-  header .brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 0;
 
-  }
+}
 
-  div{
-    position: relative;
-    display: flex;
-    
-  }
-  .topic{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-   margin-left: 50%;
-  }
+.playground-card {
+  align-self: center;
+  display: flex;
+}
 
-  
+.weather-card {
+  margin-top: 180px;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  height: 48px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  padding: 2rem;
+  position: fixed;
+  z-index: 100;
+}
+
+header .brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+
+}
+
+div {
+  position: relative;
+  display: flex;
+
+}
+
+.topic {
+  align-self: center;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 20;
+}
+
+input{
+  align-self: center;
+  width: 150px;
+  height: 50px;
+}
+
+button{
+  align-self: center;
+  width: 150px;
+}
