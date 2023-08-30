@@ -1,17 +1,52 @@
 import React from 'react';
-import './Navbar.css';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar({ className }) {
   return (
-    <nav className="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
+
+    <header className={className}>
+      <Link to="/" className='B'>Home</Link>
+      <Link to="/about" className='B'>About</Link>
+      <Link to="/services" className='B'>Services</Link>
+      <Link to="/contact" className='B'>Contact</Link>
+    </header>
+
   );
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  className: PropTypes.string.isRequired
+};
+
+export default styled(Navbar)`
+ 
+ height: 48px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  padding: 2rem;
+  position: fixed;
+  z-index: 100;
+
+  .B{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  }
+  .B:hover {
+    background-color: black;
+    color: white;
+  }
+  
+`;
