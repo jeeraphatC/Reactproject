@@ -5,9 +5,9 @@ import '../index.css'
 function Home() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
+  const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode
 
   const API_KEY = 'bf998954d92cc264bd1a56bf70845d63';
-
 
   const fetchWeather = async () => {
     try {
@@ -27,6 +27,21 @@ function Home() {
     setWeatherData(updatedWeatherData);
   };
 
+  const updateWeather = async (index) => {
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${weatherData[index].name},${weatherData[index].sys.country}&appid=${API_KEY}&units=metric`
+      );
+
+      const updatedWeatherData = [...weatherData];
+      updatedWeatherData[index] = response.data;
+      setWeatherData(updatedWeatherData);
+      setEditModeIndex(-1); // Exit edit mode
+    } catch (error) {
+      console.error('Error updating weather:', error);
+    }
+  };
+
   return (
     <div className="Home">
       <div className='topic'>
@@ -37,20 +52,36 @@ function Home() {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-      <button onClick={fetchWeather}>Get Weather</button>
+        <button onClick={fetchWeather}>Get Weather</button>
       </div>
       <div className='playground-card'>
         {weatherData.map((weather, index) => (
           <div key={index} className="weather-card">
-            <h2>
-              {weather.name}, {weather.sys.country}
-            </h2>
-            <p>Temperature: {weather.main.temp}°C</p>
-            <p>Weather: {weather.weather[0].main}</p>
-            <p>Humidity: {weather.main.humidity}%</p>
-            <p>Pressure: {weather.main.pressure} hPa</p>
-            <p>Wind Speed: {weather.wind.speed} m/s</p>
-            <button onClick={() => deleteWeather(index)}>Delete</button>
+            {editModeIndex === index ? (
+              <div>
+                {/* Input fields for editing */}
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                />
+                <button onClick={() => updateWeather(index)}>Save</button>
+              </div>
+            ) : (
+              <div>
+                {/* Display weather data */}
+                <h2>
+                  {weather.name}, {weather.sys.country}
+                </h2>
+                <p>Temperature: {weather.main.temp}°C</p>
+                <p>Weather: {weather.weather[0].main}</p>
+                <p>Humidity: {weather.main.humidity}%</p>
+                <p>Pressure: {weather.main.pressure} hPa</p>
+                <p>Wind Speed: {weather.wind.speed} m/s</p>
+                <button onClick={() => deleteWeather(index)}>Delete</button>
+                <button onClick={() => setEditModeIndex(index)}>Edit</button>
+              </div>
+            )}
           </div>
         ))}
       </div>
