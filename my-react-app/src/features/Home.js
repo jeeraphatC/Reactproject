@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../index.css'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-function Home() {
+function Home({ className, products }) {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
   const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode
@@ -43,7 +44,7 @@ function Home() {
   };
 
   return (
-    <div className="Home">
+    <div className={className}>
       <div className='topic'>
         <h1>Weather App</h1>
         <input
@@ -55,6 +56,7 @@ function Home() {
         <button onClick={fetchWeather}>Get Weather</button>
       </div>
       <div className='playground-card'>
+
         {weatherData.map((weather, index) => (
           <div key={index} className="weather-card">
             {editModeIndex === index ? (
@@ -85,8 +87,101 @@ function Home() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }
 
-export default Home;
+Home.propTypes = {
+  className: PropTypes.string.isRequired,
+}
+export default styled(Home)`
+
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  height: 100vh;
+  background-color: #f0f0f0;
+
+
+.topic {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+}
+
+button:hover {
+  background-color: #0056b8;
+}
+
+.playground-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-card {
+  width: 300px;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+`;
