@@ -1,0 +1,11 @@
+/* Map.css */
+.MapContainer {
+    height: 800px;
+    width: 100%;
+    
+}
+.TileLayer{
+    margin-top: 50px;
+}
+
+/* ... (สไตล์อื่นๆ) */
