@@ -5,7 +5,7 @@ import GlobalStyle from './features/GlobalStyle';
 import Container from './features/Container';
 import { Route, Routes } from 'react-router-dom'; 
 import HomePage from './features/Homepage'; 
-import Forecast from './features/Forecast';
+import Map from './features/Map';
 function App() {
   return (
     
@@ -16,7 +16,7 @@ function App() {
           <Routes> {/* Use Routes instead of Route */}
             <Route path="/Hompage" element={<HomePage />} /> 
             <Route path="/Current-weather" element={<Home />} />
-            <Route path="/Forecast" element={<Forecast/>} />
+            <Route path="/Map-weather" element={<Map/>} />
           </Routes>
       </Container>
       
