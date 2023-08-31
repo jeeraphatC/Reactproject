@@ -26,9 +26,7 @@ function HomePage() {
     <StyledHomePage>
       <WelcomeMessage>Welcome to Our Weather App</WelcomeMessage>
       <WeatherInfo>
-        <p>City: Your City</p>
-        <p>Temperature: 25°C</p>
-        <p>Condition: Sunny</p>
+        <p>This web-site make for show weatherData</p>
       </WeatherInfo>
     </StyledHomePage>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -7,9 +7,13 @@ function Home({ className, products }) {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
   const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode
-
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.toLocaleString('default', { month: 'long' }); // Get full month name
+  const year = currentDate.getFullYear();
   const API_KEY = 'bf998954d92cc264bd1a56bf70845d63';
 
+  //api
   const fetchWeather = async () => {
     try {
       const response = await axios.get(
@@ -22,16 +26,44 @@ function Home({ className, products }) {
     }
   };
 
+  //show
+  useEffect(() => {
+    const cities = ['London', 'New York', 'Tokyo','Thailand','Laos']; // List of cities
+
+    // Function to fetch weather data for each city
+    const fetchWeatherData = async () => {
+      try {
+        const promises = cities.map(city =>
+          axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+        );
+
+        const responses = await Promise.all(promises);
+        const data = responses.map(response => response.data);
+
+        setWeatherData(data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    // Call the function when the component mounts
+    fetchWeatherData();
+  }, []);
+
+  //
+
+  //delete
   const deleteWeather = (index) => {
     const updatedWeatherData = [...weatherData];
     updatedWeatherData.splice(index, 1);
     setWeatherData(updatedWeatherData);
   };
 
+  //updatename
   const updateWeather = async (index) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${weatherData[index].name},${weatherData[index].sys.country}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       );
 
       const updatedWeatherData = [...weatherData];
@@ -42,6 +74,9 @@ function Home({ className, products }) {
       console.error('Error updating weather:', error);
     }
   };
+
+
+
 
   return (
     <div className={className}>
@@ -56,7 +91,6 @@ function Home({ className, products }) {
         <button onClick={fetchWeather}>Get Weather</button>
       </div>
       <div className='playground-card'>
-
         {weatherData.map((weather, index) => (
           <div key={index} className="weather-card">
             {editModeIndex === index ? (
@@ -71,7 +105,7 @@ function Home({ className, products }) {
               </div>
             ) : (
               <div>
-                {/* Display weather data */}
+                {<p>Today's Date: {`${day} ${month} ${year}`}</p>}
                 <h2>
                   {weather.name}, {weather.sys.country}
                 </h2>
@@ -87,7 +121,6 @@ function Home({ className, products }) {
           </div>
         ))}
       </div>
-
     </div>
   );
 }
