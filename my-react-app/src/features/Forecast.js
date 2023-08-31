@@ -63,7 +63,7 @@ function Forecast({ className }) {
 }
 
 Forecast.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 }
 
 export default styled(Forecast)`
