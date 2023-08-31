@@ -6,6 +6,7 @@ import Container from './features/Container';
 import { Route, Routes } from 'react-router-dom'; 
 import HomePage from './features/Homepage'; 
 import Map from './features/Map';
+import Forecast from './features/Forecast';
 function App() {
   return (
     
@@ -14,9 +15,11 @@ function App() {
       <Navbar />
       <Container>   
           <Routes> {/* Use Routes instead of Route */}
-            <Route path="/Hompage" element={<HomePage />} /> 
+            <Route path="/" element={<HomePage />} /> 
             <Route path="/Current-weather" element={<Home />} />
+            <Route path="/Forecast" element={<Forecast/>} />
             <Route path="/Map-weather" element={<Map/>} />
+            
           </Routes>
       </Container>
       

@@ -130,11 +130,10 @@ Home.propTypes = {
 }
 export default styled(Home)`
 
-  font-family: Arial, sans-serif;
+
   display: flex;
   flex-direction: column;
   align-items: center;
- 
   height: 100vh;
   background-color: #f0f0f0;
 
@@ -176,6 +175,7 @@ button:hover {
 }
 
 .playground-card {
+  width: 1440px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

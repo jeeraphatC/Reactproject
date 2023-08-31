@@ -7,7 +7,7 @@ function Navbar({ className }) {
   return (
 
     <header className={className}>
-      <Link to="/Hompage" className='B'>Homepage</Link>
+      <Link to="/" className='B'>Homepage</Link>
       <Link to="/Current-weather" className='B'>Current Weather</Link>
       <Link to="/Forecast " className='B'>Forecast</Link>
       <Link to="/Map-weather " className='B'>Map</Link>
