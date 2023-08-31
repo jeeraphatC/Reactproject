@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import '../index.css'
 
-function Home({className}) {
+function Home() {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
   const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode
@@ -44,7 +43,7 @@ function Home({className}) {
   };
 
   return (
-    <div className={className}>
+    <div className="Home">
       <div className='topic'>
         <h1>Weather App</h1>
         <input
@@ -90,61 +89,4 @@ function Home({className}) {
   );
 }
 
-<<<<<<< HEAD
 export default Home;
-=======
-Home.propTypes = {
-  className: PropTypes.string.isRequired
-};
-
-export default styled(Home)`
-
-  position: relative;
-  display: flex;
-  flex-direction: column;
-
-
-.topic {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  z-index: 20;
-}
-
-input{
-  align-self: center;
-  width: 150px;
-  height: 50px;
-}
-
-button{
-  align-self: center;
-  width: 150px;
-}
-.Home {
-  width: 100%;
-  margin-top: 4%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-
-
-}
-.playground-card {
-  width: 1440px;
-  height: auto;
-  align-self: center;
-  display: flex;
-  display: inline-block;
-  flex-direction: row;
-}
-
-.weather-card {
-  display: inline-block;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 20px;
-}
-`;
->>>>>>> 45fdf7bebbd5cc56d89a326f0c493a434e14fa05
