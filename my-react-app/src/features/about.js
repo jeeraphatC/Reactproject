@@ -1,12 +1,12 @@
 import React from 'react';
-
+import './about.css';
 
 function About() {
   return (
     <body>
-      <p> 1  </p>
-      <p>  1 </p>
-      
+      <div className='main'>
+      <p>  5 </p>
+      <p>'</p>
       
     <h1>Welcome to our Weather About Page!</h1>
 
@@ -29,9 +29,11 @@ function About() {
     <p>We are committed to excellence in delivering reliable weather information that empowers you to make informed decisions. Our dedication to accuracy, accessibility, and education drives us to continually improve and innovate our services. Weather is dynamic, and we're here to help you navigate its ever-changing patterns with confidence.</p>
 
     <p>Thank you for choosing Weather App as your trusted source for weather updates. Whether you're planning a picnic, scheduling a business trip, or simply curious about the world around you, we've got you covered. Stay tuned for the latest weather insights!</p>
+</div>
 </body>
 
   );
 }
 
 export default About;
+
