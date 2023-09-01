@@ -35,7 +35,7 @@ export default styled(Map)`
    
 }
 .info{
-    margin-top: 100px;
+    margin-top: 65px;
 }
 .playground{
     
