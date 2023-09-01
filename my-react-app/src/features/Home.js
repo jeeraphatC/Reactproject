@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import backgroundImage from './sunset-clouds-3840x2160-12254.jpg';
 
 function Home({ className, products }) {
   const [city, setCity] = useState('');
@@ -28,7 +29,7 @@ function Home({ className, products }) {
 
   //show
   useEffect(() => {
-    const cities = ['London', 'New York', 'Tokyo','Thailand','Laos']; // List of cities
+    const cities = ['London', 'New York', 'Tokyo', 'Thailand', 'Laos']; // List of cities
 
     // Function to fetch weather data for each city
     const fetchWeatherData = async () => {
@@ -132,7 +133,10 @@ export default styled(Home)`
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-image: url(${backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 
 .topic {
@@ -145,11 +149,15 @@ export default styled(Home)`
 }
 
 h1 {
+  color: white;
   margin: 0;
+  font-size: 70px;
+  -webkit-text-stroke: 2px black;
+  
 }
 
 input {
-  padding: 5px;
+  padding: 10px;
   margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -185,7 +193,7 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -202,13 +210,15 @@ p {
 }
 
 button {
-  padding: 6px 12px;
+  padding: 10px 15px;
   background-color: #dc3545;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-right: 10px;
+  
 }
 
 button:hover {
