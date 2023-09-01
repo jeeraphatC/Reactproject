@@ -4,6 +4,10 @@ import React from 'react';
 function About() {
   return (
     <body>
+      <p> 1  </p>
+      <p>  1 </p>
+      
+      
     <h1>Welcome to our Weather About Page!</h1>
 
     <p>At Weather App, we're passionate about providing you with accurate and up-to-date weather information. Weather plays a significant role in our daily lives, influencing everything from our clothing choices to our travel plans, outdoor activities, and more. Our mission is to keep you informed about the ever-changing atmospheric conditions so you can make well-informed decisions.</p>
