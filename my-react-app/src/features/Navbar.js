@@ -2,18 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+import logo from './logo.png';
 function Navbar({ className }) {
   return (
 
     <header className={className}>
+     
+       
+     
+      <Link to="/" className='navbar-logo'><img src={logo} alt="Company Logo" /></Link>
       <Link to="/" className='B'>Homepage</Link>
       <Link to="/Current-weather" className='B'>Current Weather</Link>
       <Link to="/Forecast " className='B'>Forecast</Link>
       <Link to="/Map-weather " className='B'>Map</Link>
       <Link to="/Weather-Statistics" className='B'>Weather Statistics</Link>
       <Link to="/about" className='B'>About</Link>
-    
+
 
 
     </header>
@@ -53,5 +57,11 @@ export default styled(Navbar)`
     background-color: black;
     color: white;
   }
+
+  .navbar-logo img {
+  width: 120px; 
+  height: 70px;
+ 
+}
   
 `;

@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import backgroundImage from './forest-sunrise-fog-5472x2834-10240.jpg';
 
 function Forecast({ className }) {
   const [forecastData, setForecastData] = useState([]);
 
   useEffect(() => {
-    const city = 'London'; // Your chosen city
+    const city = ['London']; // Your chosen city
     const API_KEY = 'bf998954d92cc264bd1a56bf70845d63'; // Replace with your API key
     const fetchForecastData = async () => {
       try {
@@ -51,7 +52,6 @@ function Forecast({ className }) {
       <div className='playground-card'>
         {nextDayForecast.map((forecast, index) => (
           <div key={index} className="weather-card">
-            
             <h2>Time: {new Date(forecast.dt * 1000).toLocaleTimeString()}</h2>
             <p>Temperature: {forecast.main.temp}°C</p>
             <p>Weather: {forecast.weather[0]?.main}</p>
@@ -75,7 +75,10 @@ export default styled(Forecast)`
  
   height: 100vh;
   background-color: #f0f0f0;
-
+  background-image: url(${backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 
 input {

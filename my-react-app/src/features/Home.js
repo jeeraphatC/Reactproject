@@ -152,7 +152,7 @@ h1 {
   color: white;
   margin: 0;
   font-size: 70px;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 3px black;
   
 }
 
