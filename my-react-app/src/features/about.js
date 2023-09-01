@@ -1,9 +1,12 @@
 import React from 'react';
-import './about.css';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import backgroundImage from './col-de-la-madeleine-5400x3037-11343.jpg';
 
-function About() {
+
+function About({className}) {
   return (
-    <body>
+    <body className={className}>
       <div className='main'>
       <p>  5 </p>
       <p>'</p>
@@ -28,12 +31,63 @@ function About() {
     <h2>Our Commitment:</h2>
     <p>We are committed to excellence in delivering reliable weather information that empowers you to make informed decisions. Our dedication to accuracy, accessibility, and education drives us to continually improve and innovate our services. Weather is dynamic, and we're here to help you navigate its ever-changing patterns with confidence.</p>
 
-    <p>Thank you for choosing Weather App as your trusted source for weather updates. Whether you're planning a picnic, scheduling a business trip, or simply curious about the world around you, we've got you covered. Stay tuned for the latest weather insights!</p>
+    <p className='under'>Thank you for choosing Weather App as your trusted source for weather updates. Whether you're planning a picnic, scheduling a business trip, or simply curious about the world around you, we've got you covered. Stay tuned for the latest weather insights!</p>
 </div>
 </body>
 
   );
 }
 
-export default About;
+About.propTypes={
+  className:PropTypes.string.isRequired
+}
+export default styled(About)`
+/* About.css */
+background-image: url(${backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    -webkit-text-stroke: 1.5px black;
+  }
+  
+  h2 {
+    color: white;
+    margin-top: 30px;
+    -webkit-text-stroke: 1.5px black;
+  }
+  
+  p {
+    color: black;
+    line-height: 1.5;
+  }
+  
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  li {
+    color: wheat;
+    margin-bottom: 10px;
+  }
+  .main {
+    margin: 10px 100px 100px 100px;
+  }
+  /* Add more CSS styles as needed */
+  .under{
+    padding-bottom: 200px;
+  }
+`;
 

@@ -34,6 +34,8 @@ h1 {
   letter-spacing: 1pt;
   font-size: 30pt;
   margin-bottom: 1px;
+  padding-top: 20px;
+  color: white;
 }
 
 p {
