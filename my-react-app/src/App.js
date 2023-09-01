@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './features/Homepage'; 
 import Map from './features/Map';
 import Forecast from './features/Forecast';
-
+import About from './features/about';
 function App() {
   return (
     
@@ -20,6 +20,7 @@ function App() {
             <Route path="/Current-weather" element={<Home />} />
             <Route path="/Forecast" element={<Forecast/>} />
             <Route path="/Map-weather" element={<Map/>} />
+            <Route path="/about" element={<About/>} />
           </Routes>
       </Container>
       
