@@ -11,7 +11,7 @@ function Navbar({ className }) {
       <Link to="/Current-weather" className='B'>Current Weather</Link>
       <Link to="/Forecast " className='B'>Forecast</Link>
       <Link to="/Map-weather " className='B'>Map</Link>
-      <Link to="/Weather-Statistics " className='B'>Weather Statistics</Link>
+      <Link to="/Weather-Statistics" className='B'>Weather Statistics</Link>
       <Link to="/about" className='B'>About</Link>
       <Link to="/services" className='B'>Services</Link>
 

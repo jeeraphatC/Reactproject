@@ -75,9 +75,6 @@ function Home({ className, products }) {
     }
   };
 
-
-
-
   return (
     <div className={className}>
       <div className='topic'>
