@@ -132,7 +132,7 @@ export default styled(Home)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+ 
   background-image: url(${backgroundImage});
     background-size: cover;
     background-repeat: no-repeat;
