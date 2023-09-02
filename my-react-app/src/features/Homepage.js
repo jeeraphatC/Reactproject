@@ -1,7 +1,7 @@
 import React , {useEffect}from 'react';
 import styled from 'styled-components';
 import backgroundImage from '../assert/sunset-mountain-range-silhouette-landscape-orange-sky-6000x4000-4928.jpg';
-
+import Clock from './Time';
 const StyledHomePage = styled.div`
   display: flex;
   flex-direction: column;
@@ -99,6 +99,7 @@ function HomePage() {
       </WelcomeMessage>
       <WeatherInfo>
       <p className="typing-message"></p>
+      <Clock />
       </WeatherInfo>
     </StyledHomePage>
   );
