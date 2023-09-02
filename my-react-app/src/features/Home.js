@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import backgroundImage from './sunset-clouds-3840x2160-12254.jpg';
+import backgroundImage from '../assert/sunset-clouds-3840x2160-12254.jpg';
 
 function Home({ className, products }) {
   const [city, setCity] = useState('');

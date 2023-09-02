@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import backgroundImage from './forest-sunrise-fog-5472x2834-10240.jpg';
+import backgroundImage from '../assert/forest-sunrise-fog-5472x2834-10240.jpg';
 
 function Forecast({ className }) {
   const [forecastData, setForecastData] = useState([]);
@@ -118,13 +118,15 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
-
+  margin-bottom: 2px;
+  color: white;
+  font-size: 42px;
+  -webkit-text-stroke: 3px black;
 }
 
 .weather-card {
   width: 300px;
-  margin: 10px;
+  margin: 5px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;

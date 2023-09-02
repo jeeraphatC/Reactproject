@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import backgroundImage from './col-de-la-madeleine-5400x3037-11343.jpg';
+import backgroundImage from '../assert/col-de-la-madeleine-5400x3037-11343.jpg';
 
 
 function About({className}) {
@@ -29,7 +29,7 @@ function About({className}) {
     </ul>
 
     <h2>Our Commitment:</h2>
-    <p>We are committed to excellence in delivering reliable weather information that empowers you to make informed decisions. Our dedication to accuracy, accessibility, and education drives us to continually improve and innovate our services. Weather is dynamic, and we're here to help you navigate its ever-changing patterns with confidence.</p>
+    <p className='whites'>We are committed to excellence in delivering reliable weather information that empowers you to make informed decisions. Our dedication to accuracy, accessibility, and education drives us to continually improve and innovate our services. Weather is dynamic, and we're here to help you navigate its ever-changing patterns with confidence.</p>
 
     <p className='under'>Thank you for choosing Weather App as your trusted source for weather updates. Whether you're planning a picnic, scheduling a business trip, or simply curious about the world around you, we've got you covered. Stay tuned for the latest weather insights!</p>
 </div>
@@ -54,6 +54,7 @@ body {
     padding: 0;
 
   }
+ 
   
   h1 {
     color: white;
@@ -79,7 +80,7 @@ body {
   }
   
   li {
-    color: wheat;
+    color:white;
     margin-bottom: 10px;
   }
   .main {
@@ -87,7 +88,11 @@ body {
   }
   /* Add more CSS styles as needed */
   .under{
+    color:white;
     padding-bottom: 200px;
+  }
+  .whites{
+    color:white;
   }
 `;
 

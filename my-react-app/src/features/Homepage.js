@@ -1,6 +1,6 @@
 import React , {useEffect}from 'react';
 import styled from 'styled-components';
-import backgroundImage from './sunset-mountain-range-silhouette-landscape-orange-sky-6000x4000-4928.jpg';
+import backgroundImage from '../assert/sunset-mountain-range-silhouette-landscape-orange-sky-6000x4000-4928.jpg';
 
 const StyledHomePage = styled.div`
   display: flex;
@@ -97,7 +97,6 @@ function HomePage() {
     <StyledHomePage>
       <WelcomeMessage>
       <h1 className="typing-title"></h1>
-       
       </WelcomeMessage>
       <WeatherInfo>
       <p className="typing-message"></p>
