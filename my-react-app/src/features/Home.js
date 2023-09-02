@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import backgroundImage from '../assert/sunset-clouds-3840x2160-12254.jpg';
 
-function Home({ className, products }) {
+function Home({ className }) {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
   const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode

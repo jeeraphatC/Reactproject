@@ -47,6 +47,8 @@ background-image: url(${backgroundImage});
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
+   
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -84,7 +86,7 @@ body {
     margin-bottom: 10px;
   }
   .main {
-    margin: 10px 100px 100px 100px;
+    margin: 10px 100px 0px 100px;
   }
   /* Add more CSS styles as needed */
   .under{

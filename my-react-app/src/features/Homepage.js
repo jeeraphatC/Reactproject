@@ -6,19 +6,18 @@ const StyledHomePage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
   height: 100vh;
   background-image: url(${backgroundImage});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     
   
 `;
 
 const WelcomeMessage = styled.h1`
   font-size: 50px;
-  
   margin-bottom: 1px;
   color: white; 
   body, html {

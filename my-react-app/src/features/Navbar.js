@@ -58,8 +58,9 @@ export default styled(Navbar)`
   }
 
   .navbar-logo img {
-  width: 120px; 
-  height: 70px;
+    margin-top: 5px;
+  width: 100px; 
+  height: 55px;
  
 }
   
