@@ -6,7 +6,7 @@ import Container from './features/Container';
 import { Route, Routes } from 'react-router-dom'; 
 import HomePage from './features/Homepage'; 
 import Map from './features/Map';
-import Forecast from './features/Forecast';
+import Forecast from './features/redux-feature/Forcast';
 import About from './features/about';
 function App() {
   return (
