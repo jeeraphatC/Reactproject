@@ -16,6 +16,7 @@ function Navbar({ className }) {
       <Link to="/Forecast " className='B'>Forecast</Link>
       <Link to="/Map-weather " className='B'>Map</Link>
       <Link to="/about" className='B'>About</Link>
+   
     
 
 
@@ -58,8 +59,8 @@ export default styled(Navbar)`
   }
 
   .navbar-logo img {
-  width: 120px; 
-  height: 70px;
+  width: 80px; 
+  height: 50px;
  
 }
   
